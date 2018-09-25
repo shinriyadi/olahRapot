@@ -1,6 +1,6 @@
 <?php 
 
-class m_nilai_mapel extends CI_Model {
+class M_nilai_mapel extends CI_Model {
 
     public function __construct() {
 

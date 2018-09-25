@@ -2,16 +2,16 @@
   <div class="modal-body">
     <div class="col-md-12">
         <div class="form-group">
-          <label>NIK</label>
-          <input type="input" class="form-control" placeholder="NIK" name="username" value="<?php echo $v['username'] ?>">
+          <label>User ID/Username</label>
+          <input type="input" class="form-control" placeholder="Username" name="username" value="<?php echo $v['username'] ?>">
         </div>
         <div class="form-group">
           <label>Nama</label>
-          <input type="input" class="form-control" placeholder="NIK" name="nama" value="<?php echo $v['nama_user'] ?>">
+          <input type="input" class="form-control" placeholder="Nama" name="nama" value="<?php echo $v['nama_user'] ?>">
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="input" class="form-control" placeholder="NIK" name="password" value="<?php echo $v['password'] ?>">
+          <input type="input" class="form-control" placeholder="Password" name="password" value="<?php echo $v['password'] ?>">
         </div>
         <div class="form-group">
           <label>Status</label>

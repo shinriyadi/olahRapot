@@ -70,7 +70,6 @@
       width:5%;
     }
     .tabel td:nth-child(6){
-      vertical-align: top;
       font-size: 12px;
       text-align: left;
       width:20%;
@@ -87,7 +86,6 @@
       width:5%;
     }
     .tabel td:nth-child(10){
-      vertical-align: top;
       font-size: 12px;
       text-align: left;
       width:20%;
@@ -203,7 +201,7 @@
           <tr class="">
             <td><?php echo $i++ ?></td>
             <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-            <td><b>75</b></td>
+            <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
             <td><?php echo $v['pengetahuan_akhir'] ?></td>
             <td> <?php if($v['pengetahuan_akhir'] < 50){
               echo "D";
@@ -224,7 +222,7 @@
           } elseif ($v['pengetahuan_akhir'] > 84) {
             echo $v['a_pengetahuan'];
           } ?> </td>
-          <td><b>75</b></td>
+          <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
           <td><?php echo $v['keterampilan_akhir'] ?></td>
           <td> <?php if($v['keterampilan_akhir'] < 50){
             echo "D";
@@ -252,14 +250,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
       <tr>
@@ -271,7 +269,7 @@
       <tr class="">
         <td><?php echo $i++ ?></td>
         <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-        <td><b>75</b></td>
+        <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
         <td><?php echo $v['pengetahuan_akhir'] ?></td>
         <td> <?php if($v['pengetahuan_akhir'] < 50){
           echo "D";
@@ -292,7 +290,7 @@
       } elseif ($v['pengetahuan_akhir'] > 84) {
         echo $v['a_pengetahuan'];
       } ?> </td>
-      <td><b>75</b></td>
+      <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
       <td><?php echo $v['keterampilan_akhir'] ?></td>
       <td> <?php if($v['keterampilan_akhir'] < 50){
         echo "D";
@@ -320,14 +318,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
   <tr>
@@ -344,7 +342,7 @@
   <tr class="">
     <td><?php echo $i++ ?></td>
     <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-    <td><b>75</b></td>
+    <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
     <td><?php echo $v['pengetahuan_akhir'] ?></td>
     <td> <?php if($v['pengetahuan_akhir'] < 50){
       echo "D";
@@ -365,7 +363,7 @@
   } elseif ($v['pengetahuan_akhir'] > 84) {
     echo $v['a_pengetahuan'];
   } ?> </td>
-  <td><b>75</b></td>
+  <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
   <td><?php echo $v['keterampilan_akhir'] ?></td>
   <td> <?php if($v['keterampilan_akhir'] < 50){
     echo "D";
@@ -393,14 +391,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
 </tbody>
@@ -442,7 +440,7 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td><b>75</b></td>
+          <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
           <td><?php echo $v['pengetahuan_akhir'] ?></td>
           <td> <?php if($v['pengetahuan_akhir'] < 50){
             echo "D";
@@ -463,7 +461,7 @@
         } elseif ($v['pengetahuan_akhir'] > 84) {
           echo $v['a_pengetahuan'];
         } ?> </td>
-        <td><b>75</b></td>
+        <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
         <td><?php echo $v['keterampilan_akhir'] ?></td>
         <td> <?php if($v['keterampilan_akhir'] < 50){
           echo "D";
@@ -491,14 +489,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
     <tr>
@@ -515,7 +513,7 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td><b>75</b></td>
+          <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
           <td><?php echo $v['pengetahuan_akhir'] ?></td>
           <td> <?php if($v['pengetahuan_akhir'] < 50){
             echo "D";
@@ -536,7 +534,7 @@
         } elseif ($v['pengetahuan_akhir'] > 84) {
           echo $v['a_pengetahuan'];
         } ?> </td>
-        <td><b>75</b></td>
+        <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
         <td><?php echo $v['keterampilan_akhir'] ?></td>
         <td> <?php if($v['keterampilan_akhir'] < 50){
           echo "D";
@@ -565,14 +563,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
 
@@ -586,7 +584,7 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td><b>75</b></td>
+          <td><b><?php echo $v['kkm_pengetahuan'] ?></b></td>
           <td><?php echo $v['pengetahuan_akhir'] ?></td>
           <td> <?php if($v['pengetahuan_akhir'] < 50){
             echo "D";
@@ -607,7 +605,7 @@
         } elseif ($v['pengetahuan_akhir'] > 84) {
           echo $v['a_pengetahuan'];
         } ?> </td>
-        <td><b>75</b></td>
+        <td><b><?php echo $v['kkm_keterampilan'] ?></b></td>
         <td><?php echo $v['keterampilan_akhir'] ?></td>
         <td> <?php if($v['keterampilan_akhir'] < 50){
           echo "D";
@@ -635,14 +633,14 @@
         <tr class="">
           <td><?php echo $i++ ?></td>
           <td style="text-align: left;"><?php echo $v['nama_mapel'] ?></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
     </tr>
     <?php } ?>
   </tbody>
@@ -843,7 +841,7 @@
 
       <div class="col-md-6 pull-right">
         <p>&nbsp;</p>
-        Yogyakarta, &nbsp;&nbsp;&nbsp; <?php echo $bulan; echo " 20"; echo date("y"); ?><br>
+        Yogyakarta, &nbsp;<?php echo date("y") ?> <?php echo $bulan; echo " 20"; echo date("y"); ?><br>
         Wali Kelas, <br><br><br><br><b><?php echo $wali['nama_user'] ?></b>
       </div>
     </div>
@@ -853,7 +851,7 @@
     Mengetahui <br>
     Kepala Sekolah <br><br><br>
     <b><?php echo $sekolah['kepala_sekolah'] ?><br>
-    NIY. 117702037</b>      
+    NIY. <?php echo $sekolah['niy_kepala'] ?></b>      
   </div>
 </body>
 </html>

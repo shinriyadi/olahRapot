@@ -1,7 +1,7 @@
     <script type="text/javascript">
       function hapus(id) {
         if (confirm("Apakah anda yakin menghapus data ini?")) {
-          window.location.href = "<?php echo site_url() . '/admin/mapel_tkj/delete' ?>/"+id;
+          window.location.href = "<?php echo site_url() . '/admin/mapel_dkv/delete' ?>/"+id;
         } else {
           ""
         }
@@ -10,7 +10,7 @@
       function ubah(kode) {
         document.getElementById('editData').innerHTML =  "";
         $.ajax({
-          url:"<?php echo site_url(). '/admin/mapel_tkj/edit/' ?>" + kode,
+          url:"<?php echo site_url(). '/admin/mapel_dkv/edit/' ?>" + kode,
           success: function(msg) {
             $('#editData').html(msg);
           },
@@ -30,7 +30,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Mata Pelajaran TKJ
+          Mata Pelajaran Tata Busana
         </h1>
       </section>
 
@@ -57,7 +57,7 @@
           <div class="box-body">
             <div class="row">
               <div class="col-md-6">
-                <form action="<?php echo site_url(). '/admin/mapel_tkj/add_process' ?>" method="post">
+                <form action="<?php echo site_url(). '/admin/mapel_dkv/add_process' ?>" method="post">
                   <div class="form-group">
                     <label>Nama</label>
                     <input type="input" class="form-control" placeholder="Nama Mata Pelajaran" name="nama">
@@ -68,7 +68,7 @@
                     <label>Pilih Kompetensi</label>
                     <select class="form-control " style="width: 100%;" name="kompetensi">
                     <?php foreach ($kompetensi as $k){ ?>
-                      <option value="<?php echo $k['id_kompetensi'] ?>"><?php echo $k['nama_kompetensi'] ?></option>
+                      <option value="<?php echo $k['id_kompetensi'] ?>"><?php echo $k['nama_kompetensi'] ?> --> <?php echo $k['kurikulum'] ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -79,7 +79,13 @@
                     <label>Pilih Pengampu</label>
                     <select class="form-control " style="width: 100%;" name="guru">
                     <?php foreach ($guru as $g){ ?>
-                      <option value="<?php echo $g['id_user'] ?>"><?php echo $g['nama_user'] ?></option>
+                      <option value="<?php echo $g['id_user'] ?>">
+
+                      <?php if ($g['nama_user'] == 'Administrator'){
+                        echo "Kosong";
+                        } else echo $g['nama_user']; ?>
+                        
+                      </option>
                       <?php } ?>
                     </select>
                   </div>

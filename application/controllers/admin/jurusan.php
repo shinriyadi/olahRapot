@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class jurusan extends baseadmin {
+class Jurusan extends baseadmin {
 
     public function __construct() {
         parent::__construct();

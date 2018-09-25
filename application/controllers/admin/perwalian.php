@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class perwalian extends baseadmin {
+class Perwalian extends baseadmin {
 
     public function __construct() {
         parent::__construct();

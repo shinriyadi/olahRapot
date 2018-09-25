@@ -22,6 +22,10 @@
         <input type="text" name="kepala_sekolah" class="form-control" value="<?php echo $v['kepala_sekolah'] ?>">
       </div>
       <div class="form-group">
+        <label>NIY Kepala Sekolah</label>
+        <input type="text" name="NIY" class="form-control" value="<?php echo $v['niy_kepala'] ?>">
+      </div>
+      <div class="form-group">
         <label>Sikap Spiritual</label>
         <input type="text-area" name="sikap_spiritual" class="form-control" value="<?php echo $v['sikap_spiritual'] ?>">
       </div>

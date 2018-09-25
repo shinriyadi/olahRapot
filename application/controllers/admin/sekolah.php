@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class sekolah extends baseadmin {
+class Sekolah extends baseadmin {
 
     public function __construct() {
         parent::__construct();
@@ -13,7 +13,7 @@ class sekolah extends baseadmin {
     }
 
     public function index() {
-        $data['ls'] = $this->m_sekolah->ls();
+        $data['v'] = $this->m_sekolah->ls();
         parent::display('sekolah/list', $data);
     }
 

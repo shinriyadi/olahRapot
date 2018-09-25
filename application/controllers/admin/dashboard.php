@@ -5,15 +5,20 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class dashboard extends baseadmin {
+class Dashboard extends baseadmin {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('m_user');
+        $this->load->model('m_dashboard');
+        $this->load->model('m_sekolah');
     }
 
     function index() {
-        $data['user'] = $this->m_user->hitung();
+        $data['guru'] = $this->m_dashboard->guru();
+        $data['siswa'] = $this->m_dashboard->siswa();
+        $data['mapel'] = $this->m_dashboard->mapel();
+        $data['kelas'] = $this->m_dashboard->kelas();
+        $data['sekolah'] = $this->m_sekolah->ls();
         parent::display('dashboard', $data);
         
     }

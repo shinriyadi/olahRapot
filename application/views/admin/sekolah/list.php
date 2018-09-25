@@ -47,6 +47,7 @@
                                 <h4>Tahun Ajaran</h4><br>
                                 <h4>Semester</h4><br>
                                 <h4>Kepala Sekolah</h4><br>
+                                <h4>NIY Kepala Sekolah</h4><br>
                             </div>
                             <div class="col-md-1">
                                 <h4>:</h4><br>
@@ -54,22 +55,22 @@
                                 <h4>:</h4><br>
                                 <h4>:</h4><br>
                                 <h4>:</h4><br>
+                                <h4>:</h4><br>
                             </div>
                             <div class="col-md-7">
-                                <?php foreach($ls as $v){ ?>
                                 <h4><?php echo $v['nama_sekolah'] ?></h4><br>
                                 <h4><?php echo $v['alamat_sekolah'] ?></h4><br>
                                 <h4><?php echo $v['tahun_ajaran'] ?></h4><br>
                                 <h4><?php echo $v['semester'] ?></h4><br>
                                 <h4><?php echo $v['kepala_sekolah'] ?></h4><br>
-                                
+                                <h4><?php echo $v['niy_kepala'] ?></h4><br>
                             </div> 
                             <center>
                                 <button type="button" class="btn btn-primary btn-flat " data-toggle="modal" href="#editModal" onclick="ubah('<?php echo $v['id_sekolah'] ?>')">
                                 Update&nbsp;&nbsp;&nbsp;<i class="fa fa-edit"></i>
                             </button>
                                 
-                            </center><?php } ?>
+                            </center>
                         </div>
                     </div>
                     <!-- /.box-body -->

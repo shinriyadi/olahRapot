@@ -1,7 +1,7 @@
     <script type="text/javascript">
-    	function hapus(id) {
+    	function hapus(id,mapel) {
     		if (confirm("Apakah anda yakin menghapus data ini?")) {
-    			window.location.href = "<?php echo site_url() . '/admin/pMapel/delete' ?>/"+id;
+    			window.location.href = "<?php echo site_url() . '/admin/pMapel/delete' ?>/"+id +'/'+mapel;
     		} else {
     			""
     		}
@@ -54,7 +54,7 @@
       ?>
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Deskripsi Nilai Mapel</h3>
+          <h3 class="box-title">Isikan KKM dan Deskripsi untuk nilai huruf di Mata Pelajaran yang dipilih</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -66,59 +66,68 @@
         <div class="box-body">
           <div class="row">
             <form action="<?php echo site_url(). '/admin/pMapel/add_process' ?>" method="post">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label>Mata Pelajaran </label>
                   <select class="form-control select2" style="width: 100%;" name="id_mapel">
                     <?php foreach ($mapel as $v){ ?>
-                    <option value="<?php echo $v['id_mapel'] ?>"><?php echo $v['nama_mapel'] ?> --- <?php echo $v['tingkat'] ?> <?php echo $v['kode_jurusan'] ?></option>
+                    <option value="<?php echo $v['id_mapel']; ?>"><?php echo $v['nama_mapel']; ?> --- <?php echo $v['tingkat']; ?> <?php echo $v['kode_jurusan']; ?></option>
                     <?php } ?>
                   </select>
                 </div>
-
+              </div>
+                
+              <div class="col-md-6">
+                
                 <div class="form-group">
-                  <label>Pengetahuan (A) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai A" name="pengA">
+                  <label>KKM Nilai Pengetahuan</label>
+                  <input type="input" class="form-control"  placeholder="Masukkan KKM Nilai Pengetahuan" name="kkm_pengetahuan" required>
                 </div>
 
                 <div class="form-group">
-                  <label>Pengetahuan (B) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai B" name="pengB">
+                  <label>Deskripsi Nilai Pengetahuan (A) </label>
+                  <textarea class="form-control" name="pengA"></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label>Pengetahuan (C) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai C" name="pengC">
+                  <label>Deskripsi Nilai Pengetahuan (B) </label>
+                  <textarea class="form-control" name="pengB"></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label>Pengetahuan (D) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai D" name="pengD">
+                  <label>Deskripsi Nilai Pengetahuan (C) </label>
+                  <textarea class="form-control" name="pengC"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Deskripsi Nilai Pengetahuan (D) </label>
+                  <textarea class="form-control" name="pengD"></textarea>
                 </div>
               </div>
               <!-- /.col -->
               <div class="col-md-6">
                 <div class="form-group">
-                  <label style="margin-bottom: 38px;">&nbsp; </label>
+                  <label>KKM Nilai Keterampilan</label>
+                  <input type="input" class="form-control"  placeholder="Masukan KKM Nilai Keterampilan" name="kkm_keterampilan" required>
                 </div>
 
                 <div class="form-group">
-                  <label>Keterampilan (A) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai A" name="ketA">
+                  <label>Deskripsi Nilai Keterampilan (A) </label>
+                  <textarea class="form-control" name="ketA"></textarea>
                 </div>
                 <div class="form-group">
-                  <label>Keterampilan (B) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai B" name="ketB">
-                </div>
-
-                <div class="form-group">
-                  <label>Keterampilan (C) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai C" name="ketC">
+                  <label>Deskripsi Nilai Keterampilan (B) </label>
+                  <textarea class="form-control" name="ketB"></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label>Keterampilan (D) </label>
-                  <input type="input" class="form-control"  placeholder="Deskripsi Untuk Nilai D" name="ketD">
+                  <label>Deskripsi Nilai Keterampilan (C) </label>
+                  <textarea class="form-control" name="ketC"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Deskripsi Nilai Keterampilan (D) </label>
+                  <textarea class="form-control" name="ketD"></textarea>
                 </div>
                 <div class="col-xs-9" style="padding: 0"></div>
                 <div class="col-xs-3" style="padding: 0">
@@ -170,7 +179,7 @@
                 </button>
               </td>
               <td align="center">
-                <button type="button" class="btn btn-danger btn-xs btn-flat" onclick="hapus('<?php echo $v['id_keterangan_mapel'] ?>')">
+                <button type="button" class="btn btn-danger btn-xs btn-flat" onclick="hapus('<?php echo $v['id_keterangan_mapel'] ?>','<?php echo $v['id_mapel'] ?>')">
                   Hapus&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i>
                 </button>
               </td>

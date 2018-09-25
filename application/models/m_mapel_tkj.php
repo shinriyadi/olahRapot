@@ -1,6 +1,6 @@
 <?php 
 
-class m_mapel_tkj extends CI_Model {
+class M_mapel_tkj extends CI_Model {
 
     public function __construct() {
 

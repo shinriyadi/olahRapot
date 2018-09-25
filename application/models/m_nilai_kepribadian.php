@@ -1,6 +1,6 @@
 <?php 
 
-class m_nilai_kepribadian extends CI_Model {
+class M_nilai_kepribadian extends CI_Model {
 
     public function __construct() {
 
@@ -42,6 +42,19 @@ class m_nilai_kepribadian extends CI_Model {
         } else {
             return array();
         }  
+    }
+
+    public function kelas($user) {
+        $sql = "SELECT * FROM `tb_siswa` s JOIN tb_kelas k USING(id_kelas)
+                    WHERE k.id_user = $user";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $query->free_result();
+            return $result;
+        } else {
+            return array();
+        }
     }
 
     public function delete($kode) {

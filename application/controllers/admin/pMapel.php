@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class pMapel extends baseadmin {
+class PMapel extends baseadmin {
 
     public function __construct() {
         parent::__construct();
@@ -42,9 +42,16 @@ class pMapel extends baseadmin {
             $this->input->post('ketD'),
         );
 
-        $cek = $this->m_pMapel->add($params);
+        $params2 = array(
+            $this->input->post('kkm_pengetahuan'),
+            $this->input->post('kkm_keterampilan'),
+            $this->input->post('id_mapel'),
+        );
 
-        if ($cek) {
+        $cek = $this->m_pMapel->add($params);
+        $cek2 = $this->m_pMapel->kkm($params2);
+
+        if($cek&&$cek2) {
             $this->session->set_flashdata(
                 'msg', 
                 '<div class="alert alert-success alert-dismissible" role="alert" style="margin-bottom:10px;">
@@ -73,11 +80,13 @@ class pMapel extends baseadmin {
 
     public function detail($kode) {
         $data['v'] = $this->m_pMapel->view($kode);
+        $data['k'] = $this->m_pMapel->view_kkm($kode);
         $this->load->view('admin/pengaturan/detail_deskripsi', $data);
     }
 
     public function edit($kode) {
         $data['v'] = $this->m_pMapel->view($kode);
+        $data['k'] = $this->m_pMapel->view_kkm($kode);
         $this->load->view('admin/pengaturan/edit_deskripsi',$data);
     }
 
@@ -94,9 +103,16 @@ class pMapel extends baseadmin {
             $this->input->post('id_keterangan'),
         );
 
-        $cek = $this->m_pMapel->edit($params);
+        $params2 = array(
+            $this->input->post('kkm_pengetahuan'),
+            $this->input->post('kkm_keterampilan'),
+            $this->input->post('id_mapel'),
+        );
 
-        if ($cek) {
+        $cek = $this->m_pMapel->edit($params);
+        $cek2 = $this->m_pMapel->edit_kkm($params2);
+
+        if ($cek&&$cek2) {
             $this->session->set_flashdata(
                 'msg',
                 '<div class="alert alert-success alert-dismissible" role="alert" style="margin-bottom:10px;">
@@ -123,10 +139,11 @@ class pMapel extends baseadmin {
         }
     }
 
-    public function delete($id) {
+    public function delete($id,$id2) {
         $cek = $this->m_pMapel->delete($id);
+        $cek2 = $this->m_pMapel->delete2($id2);
 
-        if ($cek) {
+        if ($cek2) {
             $this->session->set_flashdata(
                 'msg', 
                 '<div class="alert alert-success alert-dismissible" role="alert" style="margin-bottom:10px;">
@@ -137,7 +154,7 @@ class pMapel extends baseadmin {
 
                     </div>'
                 );
-            redirect('admin/guru');
+            redirect('admin/pMapel');
         } else {
             $this->session->set_flashdata(
                 'msg', 
@@ -149,7 +166,7 @@ class pMapel extends baseadmin {
                         
                     </div>'
                 );
-            redirect('admin/guru');
+            redirect('admin/pMapel');
         }
     }
 }

@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class prestasi extends baseadmin {
+class Prestasi extends baseadmin {
 
     public function __construct() {
         parent::__construct();
@@ -16,16 +16,77 @@ class prestasi extends baseadmin {
     }
 
     public function dkv() {
-        $data['ls'] = $this->m_prestasi->dkv();
-            parent::display('prestasi/list', $data);        
+        if(isset($_SESSION['admin'])|isset($_SESSION['bk'])){
+            $data['ls'] = $this->m_prestasi->dkv();
+            parent::display('prestasi/list', $data);
+        }else {
+            $this->session->set_flashdata(
+                'msg', 
+                '<div class="alert alert-danger alert-dismissible" role="alert" style="margin-bottom:10px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-warning"></i>
+
+                        Anda tidak punya hak akes
+
+                    </div>'
+                );
+            redirect('admin/dashboard');
+        }         
     }
     public function tkj() {
-        $data['ls'] = $this->m_prestasi->tkj();      
-        parent::display('prestasi/list', $data);
+        if(isset($_SESSION['admin'])|isset($_SESSION['bk'])){
+            $data['ls'] = $this->m_prestasi->tkj();
+            parent::display('prestasi/list', $data);
+        }else {
+            $this->session->set_flashdata(
+                'msg', 
+                '<div class="alert alert-danger alert-dismissible" role="alert" style="margin-bottom:10px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-warning"></i>
+
+                        Anda tidak punya hak akes
+
+                    </div>'
+                );
+            redirect('admin/dashboard');
+        }
     }
     public function tb() {
-        $data['ls'] = $this->m_prestasi->tb();      
-        parent::display('prestasi/list', $data);
+        if(isset($_SESSION['admin'])|isset($_SESSION['bk'])){
+            $data['ls'] = $this->m_prestasi->tb();
+            parent::display('prestasi/list', $data);
+        }else {
+            $this->session->set_flashdata(
+                'msg', 
+                '<div class="alert alert-danger alert-dismissible" role="alert" style="margin-bottom:10px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-warning"></i>
+
+                        Anda tidak punya hak akes
+
+                    </div>'
+                );
+            redirect('admin/dashboard');
+        }
+    }
+    public function kelas() {
+        if(isset($_SESSION['wali_kelas'])){
+            $user = $_SESSION['wali_kelas'];
+            $data['ls'] = $this->m_prestasi->kelas($user);      
+            parent::display('prestasi/list', $data);
+        } else {
+            $this->session->set_flashdata(
+                'msg', 
+                '<div class="alert alert-danger alert-dismissible" role="alert" style="margin-bottom:10px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-warning"></i>
+
+                        Anda tidak punya hak akes
+
+                    </div>'
+                );
+            redirect('admin/dashboard');
+        } 
     }
 
     public function edit($kode) {

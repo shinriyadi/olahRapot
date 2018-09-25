@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class nilai_rapor extends baseadmin {
+class Nilai_rapor extends baseadmin {
 
     public function __construct() {
         parent::__construct();

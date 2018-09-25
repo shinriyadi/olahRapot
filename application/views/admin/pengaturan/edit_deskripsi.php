@@ -5,6 +5,11 @@
     <br>
     <div class="col-md-5">
         <div class="form-group">
+          <label>KKM Pengetahuan</label>
+          <input class="form-control" placeholder="KKM Penetahuan" name="kkm_pengetahuan" value="<?php echo $k['kkm_pengetahuan'] ?>" required>
+          <input type="hidden" name="id_mapel" value="<?php echo $k['id_mapel'] ?>">
+        </div>
+        <div class="form-group">
           <label>Pengetahuan A</label>
           <textarea class="form-control" name="pengA" ><?php echo $v['a_pengetahuan'] ?></textarea>
         </div>
@@ -23,6 +28,10 @@
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-6">
+        <div class="form-group">
+          <label>KKM Keterampilan</label>
+          <input class="form-control" placeholder="KKM Keterampilan" name="kkm_keterampilan" value="<?php echo $k['kkm_keterampilan'] ?>" required>
+        </div>
         <div class="form-group">
           <label>Keterampilan A</label>
           <textarea class="form-control" name="ketA" ><?php echo $v['a_keterampilan'] ?></textarea>

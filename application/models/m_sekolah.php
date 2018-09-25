@@ -1,6 +1,6 @@
 <?php 
 
-class m_sekolah extends CI_Model {
+class M_sekolah extends CI_Model {
 
     public function __construct() {
 
@@ -11,7 +11,7 @@ class m_sekolah extends CI_Model {
         $sql = "SELECT * FROM `tb_sekolah`";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
-            $result = $query->result_array();
+            $result = $query->row_array();
             $query->free_result();
             return $result;
         } else {

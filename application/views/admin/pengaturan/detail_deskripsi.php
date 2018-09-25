@@ -3,12 +3,14 @@
   <br>
   <div class="clearfix">
     <label>Pengetahuan</label><br>
+    <p>KKM : <?php echo $k['kkm_pengetahuan'] ?></p>
     <p>Deskripsi A : <?php echo $v['a_pengetahuan'] ?></p>
     <p>Deskripsi B : <?php echo $v['b_pengetahuan'] ?></p>
     <p>Deskripsi C : <?php echo $v['c_pengetahuan'] ?></p>
     <p>Deskripsi D : <?php echo $v['d_pengetahuan'] ?></p>
     <br>
     <label>Keterampilan</label><br>
+    <p>KKM : <?php echo $k['kkm_keterampilan'] ?></p>
     <p>Deskripsi A : <?php echo $v['a_keterampilan'] ?></p>
     <p>Deskripsi B : <?php echo $v['b_keterampilan'] ?></p>
     <p>Deskripsi C : <?php echo $v['c_keterampilan'] ?></p>

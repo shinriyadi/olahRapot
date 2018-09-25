@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class mapel_tb extends baseadmin {
+class Mapel_tb extends baseadmin {
 
     public function __construct() {
         parent::__construct();

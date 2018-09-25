@@ -2,7 +2,7 @@
       function detail(kode) {
         document.getElementById('detailData').innerHTML =  "";
         $.ajax({
-          url:"<?php echo site_url(). '/admin/prestasi/detail/' ?>" + kode,
+          url:"<?php echo site_url(). '/admin/nilai_kepribadian/detail/' ?>" + kode,
           success: function(msg) {
             $('#detailData').html(msg);
           },
@@ -13,7 +13,7 @@
       function ubah(kode) {
         document.getElementById('editData').innerHTML =  "";
         $.ajax({
-          url:"<?php echo site_url(). '/admin/nilai_rapor/' ?>" + kode,
+          url:"<?php echo site_url(). '/admin/nilai_kepribadian/edit/' ?>" + kode,
           success: function(msg) {
             $('#editData').html(msg);
           },
@@ -33,7 +33,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Nilai Rapor
+          Nilai Kepribadian
         </h1>
       </section>
 
@@ -49,6 +49,9 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">DAFTAR SISWA</h3>
+              </div>
               <!-- /.box-header -->
               <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -57,6 +60,7 @@
                       <th>NO</th>
                       <th>Nama</th>
                       <th>Kelas</th>
+                      <th></th>
                       <th></th>
                     </tr>
                   </thead>
@@ -69,17 +73,15 @@
                         <td><?php echo $i++ ?></td>
                         <td><?php echo $v['nama_siswa'] ?></td>
                         <td><?php echo $v['tingkat'] ?> <?php echo $v['kode_jurusan'] ?></td>
-                        <!-- <td align="center">
-                          <button type="button" class="btn btn-success btn-xs btn-flat" href="<?php echo base_url(). 'admin/nilai_rapor' ?>" onclick="ubah('<?php echo $v['id_siswa'] ?>')" >
+                        <td align="center">
+                          <button type="button" class="btn btn-success btn-xs btn-flat" data-toggle="modal" href="#editModal" onclick="ubah('<?php echo $v['id_siswa'] ?>')" >
                             Edit&nbsp;&nbsp;&nbsp;<i class="fa fa-edit"></i>
                           </button>
-                        </td> -->
+                        </td>
                         <td align="center">
-                          <a href="<?php echo site_url(). 'admin/nilai_rapor/detail/'; echo $v['id_siswa'] ?>" target="_blank">
-                            <button type="button" class="btn btn-info btn-xs btn-flat">
-                            Print&nbsp;&nbsp;&nbsp;<i class="fa fa-print"></i>
-                            </button>
-                          </a>                          
+                          <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal" href="#detailModal" onclick="detail('<?php echo $v['id_siswa'] ?>')" >
+                            Detail&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i>
+                          </button>
                         </td>
                       </tr>
                       <?php
@@ -89,31 +91,6 @@
                 </table>
               </div>
               <!-- /.box-body -->
-              <div class="col-md-8">
-                <div class="col-md-4">
-                  <div class="box-header">
-                <a href="<?php echo site_url(). 'admin/rekap' ?>" target="_blank">
-                  <button type="button" class="btn btn-warning btn-flat" data-toggle="modal" style="margin-bottom: 10px;margin-left: 15px" >
-                    Rekap Nilai Pengetahuan&nbsp;&nbsp;&nbsp;<i class="fa fa-file"></i>
-                  </button>
-                </a>
-              </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box-header">
-                <a href="<?php echo site_url(). 'admin/rekap/rekap2' ?>" target="_blank">
-                  <button type="button" class="btn btn-danger btn-flat" data-toggle="modal" style="margin-bottom: 10px;margin-left: 15px" >
-                    Rekap Nilai Keterampilan&nbsp;&nbsp;&nbsp;<i class="fa fa-file"></i>
-                  </button>
-                </a>
-              </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                
-              </div>
-              
-              
             </div>
             <!-- /.box -->
           </div>

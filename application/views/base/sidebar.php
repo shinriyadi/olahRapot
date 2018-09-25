@@ -5,9 +5,9 @@
 
       <!-- Sidebar Menu -->
       <?php 
-        if (isset($_SESSION['admin'])){
+      if (isset($_SESSION['admin'])){
        ?>
-      <ul class="sidebar-menu">
+       <ul class="sidebar-menu">
         <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
           <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
         </li>
@@ -56,18 +56,18 @@
               <a href="<?php echo site_url(). 'admin/ekstra'; ?>"><i class="fa fa-circle-o"></i> Ekstrakulikuler</a>
             </li>
             <li <?php if($url=='pMapel'){echo 'class= "active"';} ?>>
-              <a href="<?php echo site_url(). 'admin/pMapel'; ?>"><i class="fa fa-circle-o"></i> Pelajaran</a>
+              <a href="<?php echo site_url(). 'admin/pMapel'; ?>"><i class="fa fa-circle-o"></i> Mata Pelajaran</a>
             </li>
           </ul>
         </li>
 
         <li>
-          <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-circle"></i> <span>Nilai Mapel</span></a>
+        <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-list"></i> <span>Nilai Mapel</span></a>
         </li>
 
         <li <?php if($url=='nilai_kepribadian'|$url=='prestasi'){echo 'class= "treeview active"';} ?>>
           <a href="#">
-            <i class="fa fa-cog"></i> <span>Nilai Non Akademik</span>
+            <i class="fa fa-columns"></i> <span>Nilai Non Akademik</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -134,146 +134,170 @@
         </li>
 
         <li>
-          <a href="<?php echo site_url(). 'admin/nilai_rapor' ?>"><i class="fa fa-circle"></i> <span>Nilai Rapor</span></a>
+          <a href="<?php echo site_url(). 'admin/nilai_rapor' ?>"><i class="fa fa-file-text"></i> <span>Nilai Rapor</span></a>
         </li>
 
         <li>
-          <a href="<?php echo site_url(). 'admin/sekolah' ?>"><i class="fa fa-circle"></i> <span>Tentang</span></a>
+          <a href="<?php echo site_url(). 'admin/sekolah' ?>"><i class="fa fa-wrench"></i> <span>Tentang</span></a>
         </li>
       </ul>
       <?php 
-        }
-       ?>
+    }
+    ?>
 
-       <!-- wali kelas -->
-       <?php 
-        if (isset($_SESSION['wali_kelas'])){
-       ?>
-      <ul class="sidebar-menu">
-        <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
-          <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
-        </li>
-        <li>
-          <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-circle"></i> <span>Nilai Mapel</span></a>
-        </li>
+    <!-- wali kelas -->
+    <?php 
+    if (isset($_SESSION['wali_kelas'])){
+     ?>
+     <ul class="sidebar-menu">
+      <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
+        <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+      </li>
 
-        <li>
-          <a href="<?php echo site_url(). 'admin/pMapel' ?>"><i class="fa fa-circle"></i> <span>Pengaturan Mapel</span></a>
-        </li>
-        <li>
-          <a href="<?php echo site_url(). 'admin/nilai_mapel/nilai_kelas' ?>"><i class="fa fa-circle"></i> <span>Nilai Kelas</span></a>
-        </li>
-        <li>
-          <a href="<?php echo site_url(). 'admin/nilai_rapor' ?>"><i class="fa fa-circle"></i> <span>Nilai Rapor</span></a>
-        </li>
-      </ul>
-       <?php 
-        }
-        ?>
+      <li>
+        <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-check-square-o"></i> <span>Nilai Siswa</span></a>
+      </li>
 
-      <!-- BK -->
-      <?php 
-        if (isset($_SESSION['bk'])){
-       ?>
-      <ul class="sidebar-menu">
-        <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
-          <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
-        </li>
-        <li <?php if($url=='ekstra'){echo 'class= "active"';} ?>>
-              <a href="<?php echo site_url(). 'admin/ekstra'; ?>"><i class="fa fa-plus"></i> Ekstrakulikuler</a>
-        </li>
-        <li <?php if($url=='nilai_kepribadian'|$url=='prestasi'){echo 'class= "treeview active"';} ?>>
-          <a href="#">
-            <i class="fa fa-cog"></i> <span>Nilai Non Akademik</span>
+      <li>
+        <a href="<?php echo site_url(). 'admin/pMapel' ?>"><i class="fa fa-cog"></i> <span>Deskripsi & KKM</span></a>
+      </li>
+
+      <li <?php if($url=='nilai_kepribadian'|$url=='prestasi'){echo 'class= "treeview active"';} ?>>
+        <a href="#">
+          <i class="fa fa-columns"></i> <span>Nilai Non Akademik</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="<?php echo site_url(). 'admin/nilai_kepribadian/kelas'; ?>">
+              <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo site_url(). 'admin/prestasi/kelas'; ?>">
+              <i class="fa fa-circle-o"></i>Prestasi & PKL
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="<?php echo site_url(). 'admin/nilai_mapel/nilai_kelas' ?>"><i class="fa fa-list"></i> <span>Nilai Kelas</span></a>
+      </li>
+
+      <li>
+        <a href="<?php echo site_url(). 'admin/nilai_rapor' ?>"><i class="fa fa-file-text"></i> <span>Nilai Rapor</span></a>
+      </li>
+    </ul>
+    <?php 
+  }
+  ?>
+
+  <!-- BK -->
+  <?php 
+  if (isset($_SESSION['bk'])){
+   ?>
+   <ul class="sidebar-menu">
+    <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
+      <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+    </li>
+    <li <?php if($url=='ekstra'){echo 'class= "active"';} ?>>
+      <a href="<?php echo site_url(). 'admin/ekstra'; ?>"><i class="fa fa-plus"></i> Ekstrakulikuler</a>
+    </li>
+    <li <?php if($url=='nilai_kepribadian'|$url=='prestasi'){echo 'class= "treeview active"';} ?>>
+      <a href="#">
+        <i class="fa fa-columns"></i> <span>Nilai Non Akademik</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="#"><i class="fa fa-circle-o"></i> Kelas DKV
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Kelas DKV
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+              <a href="<?php echo site_url(). 'admin/nilai_kepribadian/dkv'; ?>">
+                <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
               </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="<?php echo site_url(). 'admin/nilai_kepribadian/dkv'; ?>">
-                    <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
-                  </a>
-                </li>
-                <li>
-                  <a href="<?php echo site_url(). 'admin/prestasi/dkv'; ?>">
-                    <i class="fa fa-circle-o"></i>Prestasi & PKL
-                  </a>
-                </li>
-              </ul>
             </li>
             <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Kelas TB
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+              <a href="<?php echo site_url(). 'admin/prestasi/dkv'; ?>">
+                <i class="fa fa-circle-o"></i>Prestasi & PKL
               </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="<?php echo site_url(). 'admin/nilai_kepribadian/tb'; ?>">
-                    <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
-                  </a>
-                </li>
-                <li>
-                  <a href="<?php echo site_url(). 'admin/prestasi/tb'; ?>">
-                    <i class="fa fa-circle-o"></i>Prestasi & PKL
-                  </a>
-                </li>
-              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-circle-o"></i> Kelas TB
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="<?php echo site_url(). 'admin/nilai_kepribadian/tb'; ?>">
+                <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
+              </a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Kelas TKJ
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+              <a href="<?php echo site_url(). 'admin/prestasi/tb'; ?>">
+                <i class="fa fa-circle-o"></i>Prestasi & PKL
               </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="<?php echo site_url(). 'admin/nilai_kepribadian/tkj'; ?>">
-                    <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
-                  </a>
-                </li>
-                <li>
-                  <a href="<?php echo site_url(). 'admin/prestasi/tkj'; ?>">
-                    <i class="fa fa-circle-o"></i>Prestasi & PKL
-                  </a>
-                </li>
-              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-circle-o"></i> Kelas TKJ
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="<?php echo site_url(). 'admin/nilai_kepribadian/tkj'; ?>">
+                <i class="fa fa-circle-o"></i>Absensi & Ekstrakulikuler
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo site_url(). 'admin/prestasi/tkj'; ?>">
+                <i class="fa fa-circle-o"></i>Prestasi & PKL
+              </a>
             </li>
           </ul>
         </li>
       </ul>
-       <?php 
-        }
-        ?>
+    </li>
+  </ul>
+  <?php 
+}
+?>
 
-       <!-- guru -->
-      <?php 
-        if (isset($_SESSION['guru'])){
-       ?>
-      <ul class="sidebar-menu">
-        <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
-          <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
-        </li>
-        <li>
-          <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-circle"></i> <span>Nilai Mapel</span></a>
-        </li>
+<!-- guru -->
+<?php 
+if (isset($_SESSION['guru'])){
+ ?>
+ <ul class="sidebar-menu">
+  <li <?php if($url=='dashboard') {echo 'class = "active"';} ?>>
+    <a href="<?php echo site_url(). 'admin/dashboard' ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+  </li>
+  <li>
+    <a href="<?php echo site_url(). 'admin/nilai_mapel' ?>"><i class="fa fa-check-square-o"></i> <span>Nilai Mapel</span></a>
+  </li>
 
-        <li>
-          <a href="<?php echo site_url(). 'admin/pMapel' ?>"><i class="fa fa-circle"></i> <span>Pengaturan Mapel</span></a>
-        </li>
-      </ul>
-       <?php 
-        }
-        ?>
-  <!-- /.sidebar-menu -->
+  <li>
+    <a href="<?php echo site_url(). 'admin/pMapel' ?>"><i class="fa fa-cog"></i> <span>Pengaturan Mapel</span></a>
+  </li>
+</ul>
+<?php 
+}
+?>
+<!-- /.sidebar-menu -->
 </section>
 <!-- /.sidebar -->
 </aside>

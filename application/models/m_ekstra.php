@@ -1,6 +1,6 @@
 <?php 
 
-class m_ekstra extends CI_Model {
+class M_ekstra extends CI_Model {
 
     public function __construct() {
 

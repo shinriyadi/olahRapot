@@ -1,6 +1,6 @@
 <?php 
 
-class m_kompetensi extends CI_Model {
+class M_kompetensi extends CI_Model {
 
     public function __construct() {
 

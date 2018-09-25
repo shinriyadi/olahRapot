@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 require_once( APPPATH . 'controllers/base/baseadmin.php' );
 
-class kelas extends baseadmin {
+class Kelas extends baseadmin {
 
     public function __construct() {
         parent::__construct();

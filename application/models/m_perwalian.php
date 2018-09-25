@@ -1,6 +1,6 @@
 <?php
 
-Class m_perwalian extends CI_Model {
+Class M_perwalian extends CI_Model {
 
 	public function __construct() {
 

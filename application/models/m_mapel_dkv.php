@@ -1,6 +1,6 @@
 <?php 
 
-class m_mapel_dkv extends CI_Model {
+class M_mapel_dkv extends CI_Model {
 
     public function __construct() {
 

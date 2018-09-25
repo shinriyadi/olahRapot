@@ -59,8 +59,8 @@
               <div class="col-md-6">
                 <form action="<?php echo site_url(). '/admin/guru/add_process' ?>" method="post">
                   <div class="form-group">
-                    <label>NIK</label>
-                    <input type="input" class="form-control" placeholder="Masukkan NIK" name="username">
+                    <label>User ID/Username</label>
+                    <input type="input" class="form-control" placeholder="Masukkan ID/Username" name="username">
                   </div>
 
                   <div class="form-group">
@@ -75,7 +75,6 @@
                     <label>Status</label>
                     <select class="form-control" style="width: 100%;" name="status">
                       <option selected="selected">GURU</option>
-                      <option>WALI KELAS</option>
                       <option>BK</option>
                     </select>
                   </div>
@@ -110,7 +109,7 @@
                   <thead>
                     <tr>
                       <th>NO</th>
-                      <th>NIK</th>
+                      <th>UserID</th>
                       <th>Nama</th>
                       <th>Password</th>
                       <th>Status</th>

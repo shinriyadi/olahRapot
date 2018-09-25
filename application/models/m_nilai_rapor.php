@@ -1,6 +1,6 @@
 <?php 
 
-class m_nilai_rapor extends CI_Model {
+class M_nilai_rapor extends CI_Model {
 
     public function __construct() {
 

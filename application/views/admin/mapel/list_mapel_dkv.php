@@ -79,7 +79,13 @@
                     <label>Pilih Pengampu</label>
                     <select class="form-control " style="width: 100%;" name="guru">
                     <?php foreach ($guru as $g){ ?>
-                      <option value="<?php echo $g['id_user'] ?>"><?php echo $g['nama_user'] ?></option>
+                      <option value="<?php echo $g['id_user'] ?>">
+
+                      <?php if ($g['nama_user'] == 'Administrator'){
+                        echo "Kosong";
+                        } else echo $g['nama_user']; ?>
+                        
+                      </option>
                       <?php } ?>
                     </select>
                   </div>
